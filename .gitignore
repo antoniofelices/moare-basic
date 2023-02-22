@@ -1,0 +1,27 @@
+# Composer
+composer.lock
+vendor/
+
+# Dev tools
+.phpcs.xml
+phpcs.xml
+.cache/phpcs.cache
+phpunit.xml
+.phpunit.result.cache
+
+# Editors
+.vscode
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+.Icon
+Thumbs.db
+
+# Temp files
+.tmp/
+
+
+
