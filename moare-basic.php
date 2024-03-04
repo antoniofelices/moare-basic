@@ -62,6 +62,7 @@ add_action( 'init', __NAMESPACE__ . '\plugin_textdomain' );
 require_once MOARE_BASIC_PATH . '/includes/clean-head.php';
 require_once MOARE_BASIC_PATH . '/includes/clean-login.php';
 require_once MOARE_BASIC_PATH . '/includes/media.php';
+require_once MOARE_BASIC_PATH . '/includes/load-tracking-systems.php';
 require_once MOARE_BASIC_PATH . '/includes/register-cpts.php';
 require_once MOARE_BASIC_PATH . '/includes/register-taxs.php';
 
