@@ -50,7 +50,7 @@ if ( ! defined( 'MOARE_BASIC_BASENAME' ) ) {
  */
 function plugin_textdomain() {
 
-	load_plugin_textdomain( 'moare-basic', false, dirname( MOARE_BASIC_BASENAME ) . '/languages/' );
+	load_plugin_textdomain( 'moare-basic', false, plugin_dir_url( __FILE__ ) . 'languages/' );
 
 }
 add_action( 'init', __NAMESPACE__ . '\plugin_textdomain' );
@@ -66,9 +66,28 @@ require_once MOARE_BASIC_PATH . '/includes/load-tracking-systems.php';
 require_once MOARE_BASIC_PATH . '/includes/register-cpts.php';
 require_once MOARE_BASIC_PATH . '/includes/register-taxs.php';
 
+/**
+ * Clean backend.
+ */
 if ( is_admin() ) {
 	require_once MOARE_BASIC_PATH . '/admin/clean-backend.php';
 }
+
+/**
+ * Clean backend.
+ * Remove blocks variations.
+ */
+function remove_default_block_variations() {
+
+	wp_enqueue_script(
+		'mb-remove-default-block-variations',
+		plugin_dir_url( __FILE__ ) . 'assets/js/remove-default-block-variations.js',
+		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
+		MOARE_BASIC_VERSION
+	);
+
+}
+add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\remove_default_block_variations' );
 
 /**
  * Flush rewrite on activate.
