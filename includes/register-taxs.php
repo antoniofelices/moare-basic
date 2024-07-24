@@ -57,7 +57,7 @@ function register_tax() {
 	);
 
 	// Max 20 characters.
-	register_taxonomy( 'moare_custom_tax', array( 'moare_custom_cpt' ), $args_name );
+	register_taxonomy( 'mb_custom_tax', array( 'mb_custom_cpt' ), $args_name );
 
 }
 add_action( 'init', __NAMESPACE__ . '\register_tax', 10 );

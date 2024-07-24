@@ -49,11 +49,11 @@ function register_cpt() {
 		'rewrite'            => $rewrite_name,
 		'capability_type'    => 'post',
 		'show_in_rest'       => true,
-		'taxonomies'         => array( 'moare_custom_tax_1' ),
+		'taxonomies'         => array( 'mb_custom_tax_1' ),
 	);
 
 	// Max 20 characters.
-	register_post_type( 'moare_custom_cpt', $args_name );
+	register_post_type( 'mb_custom_cpt', $args_name );
 
 }
 add_action( 'init', __NAMESPACE__ . '\register_cpt', 10 );
