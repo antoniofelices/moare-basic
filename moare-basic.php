@@ -50,7 +50,7 @@ if ( ! defined( 'MOARE_BASIC_BASENAME' ) ) {
  */
 function plugin_textdomain() {
 
-	load_plugin_textdomain( 'moare-basic', false, plugin_dir_url( __FILE__ ) . 'languages/' );
+	load_plugin_textdomain( 'moare-basic', false, dirname( MOARE_BASIC_BASENAME ) . '/languages/' );
 
 }
 add_action( 'init', __NAMESPACE__ . '\plugin_textdomain' );
@@ -81,7 +81,7 @@ function remove_default_block_variations() {
 
 	wp_enqueue_script(
 		'mb-remove-default-block-variations',
-		plugin_dir_url( __FILE__ ) . 'assets/js/remove-default-block-variations.js',
+		plugins_url( 'assets/js/remove-default-block-variations.js', __FILE__ ),
 		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
 		MOARE_BASIC_VERSION
 	);
