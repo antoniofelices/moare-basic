@@ -57,7 +57,7 @@ function hide_menus() {
 	if ( ! current_user_can( 'manage_options' ) ) {
 
 		remove_menu_page( 'index.php' );
-		remove_menu_page( 'edit.php' );
+		// remove_menu_page( 'edit.php' );
 		remove_menu_page( 'edit-comments.php' );
 		remove_menu_page( 'tools.php' );
 
@@ -65,3 +65,58 @@ function hide_menus() {
 
 }
 add_action( 'admin_menu', __NAMESPACE__ . '\hide_menus' );
+
+
+/**
+ * Restrict blocks to editor role.
+ */
+function restrict_blocks_by_user_role( $allowed_block_types, $block_editor_context ) {
+
+	if ( empty( $block_editor_context->post ) ) {
+		return $allowed_block_types;
+	}
+
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return array(
+			'core/button',
+			'core/buttons',
+			'core/column',
+			'core/columns',
+			'core/cover',
+			'core/details',
+			'core/embed',
+			'core/file',
+			'core/freeform',
+			'core/gallery',
+			'core/group',
+			'core/heading',
+			'core/html',
+			'core/image',
+			'core/list',
+			'core/list-item',
+			'core/media-text',
+			'core/missing',
+			'core/more',
+			'core/nextpage',
+			'core/paragraph',
+			'core/post-featured-image',
+			'core/post-time-to-read',
+			'core/post-title',
+			'core/preformatted',
+			'core/pullquote',
+			'core/query',
+			'core/quote',
+			'core/read-more',
+			'core/separator',
+			'core/spacer',
+			'core/table',
+			'core/table-of-contents',
+			'core/video'
+		);
+	}
+
+	return $allowed_block_types;
+
+}
+
+add_filter( 'allowed_block_types_all', __NAMESPACE__ .  '\restrict_blocks_by_user_role', 10, 2 );

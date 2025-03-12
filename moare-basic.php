@@ -3,7 +3,7 @@
  * Plugin Name:     Moare Basic
  * Plugin URI:      http://studiomoare.com
  * Description:     Functions Studio Moare use to create a websites. Create custom post types, create custom taxonomies, clean html head tag, clean backend, crop images.
- * Version:         1.0.1
+ * Version:         1.0.2
  * Requires PHP:    7.4
  * Author:          antonio
  * Author URI:      http://studiomoare.com
@@ -13,7 +13,7 @@
  *
  * @package         moare/moare-basic
  *
- * Copyright 2024 Studio Moare.
+ * Copyright 2025 Studio Moare.
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
@@ -31,7 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'MOARE_BASIC_VERSION', '1.0.1' );
+define( 'MOARE_BASIC_VERSION', '1.0.2' );
 
 if ( ! defined( 'MOARE_BASIC_FILE' ) ) {
 	define( 'MOARE_BASIC_FILE', __FILE__ );
