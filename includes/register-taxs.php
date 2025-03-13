@@ -15,7 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register Custom Taxonomies.
  */
 function register_tax() {
-
 	// Name.
 	$labels_name  = array(
 		'name'                       => _x( 'Taxonomies', 'Taxonomy General Name', 'moare-basic' ),
@@ -58,6 +57,5 @@ function register_tax() {
 
 	// Max 20 characters.
 	register_taxonomy( 'mb_custom_tax', array( 'mb_custom_cpt' ), $args_name );
-
 }
 add_action( 'init', __NAMESPACE__ . '\register_tax', 10 );

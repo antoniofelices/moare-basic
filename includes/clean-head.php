@@ -5,8 +5,6 @@
  * @package moare/moare-basic
  */
 
-namespace Moare_Basic\Clean_Head;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }

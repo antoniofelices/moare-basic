@@ -15,9 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Remove text logo.
  */
 function remove_login_logo_text() {
-
 	return '';
-
 }
 add_filter( 'login_headertext', __NAMESPACE__ . '\remove_login_logo_text' );
 
@@ -25,9 +23,7 @@ add_filter( 'login_headertext', __NAMESPACE__ . '\remove_login_logo_text' );
  * Remove url login logo.
  */
 function remove_login_logo_url() {
-
 	return home_url();
-
 }
 add_filter( 'login_headerurl', __NAMESPACE__ . '\remove_login_logo_url' );
 

@@ -15,7 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register Custom Post Types.
  */
 function register_cpt() {
-
 	// Name.
 	$labels_name  = array(
 		'name'               => _x( 'Mycustoms', 'post type general name', 'moare-basic' ),
@@ -54,6 +53,5 @@ function register_cpt() {
 
 	// Max 20 characters.
 	register_post_type( 'mb_custom_cpt', $args_name );
-
 }
 add_action( 'init', __NAMESPACE__ . '\register_cpt', 10 );
